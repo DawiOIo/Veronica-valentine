@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>For Veronica ❤️</title>
 <style>
 body {
@@ -13,7 +13,6 @@ body {
     text-align: center;
     color: white;
 }
-
 .heart {
     position: fixed;
     bottom: -10px;
@@ -21,35 +20,80 @@ body {
     animation: floatUp linear infinite;
 }
 @keyframes floatUp {
-    to { transform: translateY(-110vh); opacity:0; }
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
 }
-
-.container { margin-top:100px; padding:20px; position:relative; z-index:10; }
-h1 { font-size:2.5em; text-shadow:0 0 20px rgba(255,255,255,0.8); }
-button { padding:14px 30px; margin:15px; border:none; border-radius:40px; font-size:18px; cursor:pointer; transition:.3s; font-weight:bold; }
-.yes { background:#ff4d6d; color:white; box-shadow:0 0 20px #ff4d6d; }
-.no { background:white; color:#ff4d6d; }
-button:hover { transform:scale(1.15); }
-.hidden { display:none; }
-.gifts button { display:block; width:280px; margin:20px auto; background:white; color:#ff4d6d; }
-.message-box { background: rgba(255,255,255,0.2); padding:25px; border-radius:20px; margin-top:20px; white-space:pre-line; backdrop-filter: blur(10px);}
+.container {
+    margin-top: 100px;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+}
+h1 {
+    font-size: 2.5em;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+button {
+    padding: 14px 30px;
+    margin: 15px;
+    border: none;
+    border-radius: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+.yes {
+    background: #ff4d6d;
+    color: white;
+    box-shadow: 0 0 20px #ff4d6d;
+}
+.no {
+    background: white;
+    color: #ff4d6d;
+}
+button:hover {
+    transform: scale(1.15);
+}
+.hidden {
+    display: none;
+}
+.gifts button {
+    display: block;
+    width: 280px;
+    margin: 20px auto;
+    background: white;
+    color: #ff4d6d;
+}
+.message-box {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 25px;
+    border-radius: 20px;
+    margin-top: 20px;
+    white-space: pre-line;
+    backdrop-filter: blur(10px);
+}
 </style>
 </head>
 <body>
-
 <audio autoplay loop>
-    <source src="https://www2.cs.uic.edu/~i101/SoundFiles/CanonInD.mp3" type="audio/mpeg">
+    <source src="https://www2.cs.uic.edu/~i101/SoundFiles/CanonInD.mp3" type="audio/mpeg" />
 </audio>
 
 <div class="container" id="passwordPage">
     <h1>Enter Password For Veronica 💖</h1>
-    <input type="text" id="passwordInput" placeholder="Enter password">
-    <br><br>
+    <input type="text" id="passwordInput" placeholder="Enter password" />
+    <br /><br />
     <button onclick="checkPassword()">Open My Heart 💘</button>
 </div>
 
 <div class="container hidden" id="mainPage">
-    <h1 id="question">Hey Veronica, my love 💕<br>Will you be my Valentine? 💖</h1>
+    <h1 id="question">
+        Hey Veronica, my love 💕<br />
+        Will you be my Valentine? 💖
+    </h1>
     <button class="yes" onclick="sayYes()">Yes 💘</button>
     <button class="no" onclick="sayNo()">No 💔</button>
 </div>
@@ -65,22 +109,20 @@ button:hover { transform:scale(1.15); }
 </div>
 
 <script>
-/* Floating Hearts */
 setInterval(() => {
-    const heart=document.createElement("div");
+    const heart = document.createElement("div");
     heart.classList.add("heart");
-    heart.innerHTML="💖";
-    heart.style.left=Math.random()*100+"vw";
-    heart.style.animationDuration=(Math.random()*3+4)+"s";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 3 + 4 + "s";
     document.body.appendChild(heart);
-    setTimeout(()=>heart.remove(),7000);
-},300);
+    setTimeout(() => heart.remove(), 7000);
+}, 300);
 
-/* Password */
-let noCount=0;
-function checkPassword(){
-    let password=document.getElementById("passwordInput").value.trim();
-    if(password === "02052024"){
+let noCount = 0;
+function checkPassword() {
+    let password = document.getElementById("passwordInput").value.trim();
+    if (password === "02052024") {
         document.getElementById("passwordPage").classList.add("hidden");
         document.getElementById("mainPage").classList.remove("hidden");
     } else {
@@ -88,25 +130,25 @@ function checkPassword(){
     }
 }
 
-/* Yes / No */
-function sayNo(){
+function sayNo() {
     noCount++;
-    const q=document.getElementById("question");
-    if(noCount===1) q.innerText="Are you sure Veronica? 🥺";
-    else if(noCount===2) q.innerText="Please rethink your decision 😭";
-    else if(noCount===3) q.innerText="You have to say yes, you are mine forever 😌❤️";
-    else q.innerText="Why you hate me 💔😭";
+    const q = document.getElementById("question");
+    if (noCount === 1) q.innerText = "Are you sure Veronica? 🥺";
+    else if (noCount === 2) q.innerText = "Please rethink your decision 😭";
+    else if (noCount === 3) q.innerText = "You have to say yes, you are mine forever 😌❤️";
+    else q.innerText = "Why you hate me 💔😭";
 }
-function sayYes(){
+
+function sayYes() {
     document.getElementById("mainPage").classList.add("hidden");
     document.getElementById("giftsPage").classList.remove("hidden");
 }
 
-/* Gifts */
-function showGift(number){
-    const box=document.getElementById("giftMessage");
+function showGift(number) {
+    const box = document.getElementById("giftMessage");
     box.classList.remove("hidden");
-    if(number===1) box.innerText=`OUR FIRST EVERYTHING ❤️
+    if (number === 1)
+        box.innerText = `OUR FIRST EVERYTHING ❤️
 
 02/05/2024 - First hello ❤
 13/05/2024 - First I love you
@@ -116,12 +158,14 @@ function showGift(number){
 31/10/2024 - First Halloween 🎃
 25/12/2024 - First Christmas 🎄
 14/02/2025 - First Valentine 💘`;
-    if(number===2) box.innerText=`The first time we met was on Valorant 💖
+    if (number === 2)
+        box.innerText = `The first time we met was on Valorant 💖
 You are my angel, my princess, my everything 👑
 Even through fights and hard times,
 my love for you only grows stronger.
 I promise to make you happy forever 💫💖`;
-    if(number===3) box.innerText=`653 Days With You 💞
+    if (number === 3)
+        box.innerText = `653 Days With You 💞
 
 You are the best thing that has ever happened to me.
 You are my person, my heart, my everything.
